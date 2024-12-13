@@ -1,113 +1,70 @@
-# Country-Data-Dashboard
-Country Data Dashboard 
+# Getting Started with Create React App
 
-Here's a step-by-step approach to handle this assignment, ensuring you meet all high-level requirements and evaluation criteria:
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Step 1: Project Structure
-Create a folder structure to keep backend and frontend projects organized:
+## Available Scripts
 
+In the project directory, you can run:
 
-Copy code
-country-data-dashboard/
-├── backend/
-├── frontend/
-└── README.md
-Step 2: Backend Setup
-1. Initialize Backend Project
-Create a Node.js project with TypeScript:
-bash
-Copy code
-mkdir backend
-cd backend
-npm init -y
-npm install express axios cors dotenv
-npm install --save-dev typescript @types/node @types/express nodemon ts-node
-Set up tsconfig.json:
-json
-Copy code
-{
-  "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true
-  }
-}
-2. Create Backend Endpoints
-Use axios to fetch data from the REST Countries API.
-Define endpoints:
-GET /countries: Fetch all countries.
-GET /countries/:code: Fetch details by country code.
-GET /countries/region/:region: Filter by region.
-GET /countries/search: Search by name, capital, timezone, etc.
-Implement caching using an in-memory Map.
-3. Add Middleware for Error Handling
-Use middleware to handle errors like 404 or 500.
-4. Run Backend Server
-Use nodemon for live-reloading during development.
-bash
-Copy code
-nodemon src/server.ts
-Step 3: Frontend Setup
-1. Initialize Frontend Project
-Create a Next.js app:
-bash
-Copy code
-mkdir frontend
-cd frontend
-npx create-next-app@latest --typescript
-npm install axios react-query tailwindcss
-Configure Tailwind CSS:
-bash
-Copy code
-npx tailwindcss init
-Add the Tailwind setup to globals.css.
-2. Build Pages and Components
-Pages:
-Home Page:
-Display country cards with lazy loading (React Query + Infinite Scroll).
-Provide filters (region, timezone) and a search bar.
-Country Details Page:
-Show detailed country info (population, currency, languages, flag, etc.).
-Components:
-Card Component:
-Display the country name, flag, region, and current time (using JavaScript's Intl.DateTimeFormat).
-Search & Filter:
-Controlled inputs for dynamic filtering.
-3. State Management
-Use React Query for API calls and caching.
-4. Handle Loading & Error States
-Add skeleton loaders and error messages.
-Step 4: Optional Enhancements
-Compare Two Countries:
-Add a dropdown to select two countries and display side-by-side comparisons.
-Visualization:
-Use libraries like chart.js or recharts to visualize data like population or area.
-Step 5: Deployment
-Deploy both backend and frontend:
-Use Vercel for frontend.
-Use Render or Heroku for backend.
-Set up environment variables for API URLs.
-Step 6: Documentation
-1. README.md
-Include:
+### `npm start`
 
-Project overview.
-Setup instructions for backend and frontend.
-API documentation.
-2. Git Commit Messages
-Use meaningful commit messages:
-feat: add country search API
-fix: handle API errors for missing country code
-style: improve card component responsiveness
-3. PPT Slides
-Prepare 2-3 slides covering:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Features implemented.
-Tech stack used.
-Challenges faced and how they were resolved.
-Step 7: Submission
-Push your code to GitHub.
-Include a GitHub Actions workflow for CI/CD (if time permits).
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
